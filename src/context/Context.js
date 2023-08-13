@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { movies } from "../database/Database";
 
 const MoviesContext = createContext();

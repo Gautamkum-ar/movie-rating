@@ -8,7 +8,7 @@ const navlinks = [
     name: "Movies",
     route: "/",
   },
-  { id: 2, name: "Watch List", route: "/watchlist" },
+  { id: 2, name: "Watch List", route: "/watchlater" },
   {
     id: 3,
     name: "Starred movies",
