@@ -62,6 +62,7 @@ export const ContextProvider = ({ children }) => {
   const addToStarred = (id) => {
     const findMovie = movies.find((movie) => movie.id === id);
     setStarredData([...starredData, findMovie]);
+    sessionStorage.setItem("starred", JSON.stringify(starredData));
   };
 
   const isPresentInStarred = (id) => {
@@ -76,6 +77,7 @@ export const ContextProvider = ({ children }) => {
   const addToWatchLater = (id) => {
     const findMovie = movies.find((movie) => movie.id === id);
     setWatchLater([...starredData, findMovie]);
+    sessionStorage.setItem("watchlater", JSON.stringify(watchLater));
   };
 
   const isPresentInWatchLater = (id) => {
@@ -91,8 +93,25 @@ export const ContextProvider = ({ children }) => {
   // add new movie
 
   const addNewMovie = (data) => {
+    const datas = [...movieData, data];
     setMovieData([...movies, { ...data }]);
+    sessionStorage.setItem("data", JSON.stringify(datas));
   };
+
+  useEffect(() => {
+    const getData = JSON.parse(sessionStorage.getItem("data"));
+    const watch = JSON.parse(sessionStorage.getItem("watchlater"));
+    const star = JSON.parse(sessionStorage.getItem("starred"));
+    if (getData) {
+      setMovieData(getData);
+    }
+    if (watch) {
+      setWatchLater(watch);
+    }
+    if (star) {
+      setStarredData(star);
+    }
+  }, []);
   return (
     <MoviesContext.Provider
       value={{
