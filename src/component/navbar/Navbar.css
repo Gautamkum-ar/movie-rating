@@ -1,0 +1,44 @@
+
+
+.navbar{
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #444;
+    z-index: 999;
+    height: 4rem;
+    padding: 0 3rem;
+    align-items: center;
+
+    justify-content: space-between;
+
+}
+.navbar h1{
+    width: 10%;
+    color: #c1c1c1;
+}
+.input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+    padding: 0.5rem;
+    width: 30%;
+    outline: none;
+    border-radius: 7px;
+    border: none;
+}
+
+.links{
+    display: flex;
+    gap: 1rem;
+}
+.links a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #c1c1c1;
+}
